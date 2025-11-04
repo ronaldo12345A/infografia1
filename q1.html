@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía - Sistema de Reconocimiento Facial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #1a237e, #283593);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .infographic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+        }
+        
+        .card-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #1a237e;
+            border-bottom: 2px solid #e8eaf6;
+            padding-bottom: 8px;
+        }
+        
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 8px 0;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        
+        .metric-name {
+            font-weight: 600;
+        }
+        
+        .metric-value {
+            font-weight: 700;
+            color: #283593;
+        }
+        
+        .highlight {
+            background-color: #e8eaf6;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #283593;
+        }
+        
+        .tech-list {
+            list-style-type: none;
+        }
+        
+        .tech-list li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .tech-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+        }
+        
+        .phase {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .phase-title {
+            font-weight: 600;
+            color: #1a237e;
+            margin-bottom: 5px;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .result-item {
+            text-align: center;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+        
+        .result-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1a237e;
+            margin: 10px 0;
+        }
+        
+        .architecture-diagram {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .architecture-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .step-number {
+            background: #283593;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .infographic-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema de Reconocimiento Facial</h1>
+            <p class="subtitle">Implementación con EfficientNetB0 y metodología CRISP-ML</p>
+            <p>Grupo Code4 - Universidad Peruana</p>
+        </header>
+        
+        <div class="infographic-grid">
+            <div class="card">
+                <h2 class="card-title">Metodología CRISP-ML</h2>
+                <div class="phase">
+                    <div class="phase-title">Fase 1: Comprensión del Negocio</div>
+                    <p>Identificar integrantes del equipo mediante cámara en tiempo real</p>
+                </div>
+                <div class="phase">
+                    <div class="phase-title">Fase 2: Comprensión de Datos</div>
+                    <p>Recolección de imágenes con variaciones en pose, iluminación y expresión</p>
+                </div>
+                <div class="phase">
+                    <div class="phase-title">Fase 3: Preparación de Datos</div>
+                    <p>Detección facial, normalización, aumento de datos y división en conjuntos</p>
+                </div>
+                <div class="phase">
+                    <div class="phase-title">Fase 4: Modelado</div>
+                    <p>CNN basada en EfficientNetB0 con fine-tuning y optimizador Adam</p>
+                </div>
+                <div class="phase">
+                    <div class="phase-title">Fase 5: Evaluación</div>
+                    <p>Análisis mediante matrices de confusión y métricas detalladas</p>
+                </div>
+                <div class="phase">
+                    <div class="phase-title">Fase 6: Despliegue</div>
+                    <p>Conversión a TensorFlow Lite y desarrollo de aplicación móvil</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title">Arquitectura del Modelo</h2>
+                <div class="architecture-diagram">
+                    <div class="architecture-step">
+                        <div class="step-number">1</div>
+                        <div>Base: EfficientNetB0 pre-entrenada en ImageNet</div>
+                    </div>
+                    <div class="architecture-step">
+                        <div class="step-number">2</div>
+                        <div>Fine-tuning de últimas 50 capas</div>
+                    </div>
+                    <div class="architecture-step">
+                        <div class="step-number">3</div>
+                        <div>GlobalAveragePooling2D para reducción dimensional</div>
+                    </div>
+                    <div class="architecture-step">
+                        <div class="step-number">4</div>
+                        <div>BatchNormalization y Dropout para regularización</div>
+                    </div>
+                    <div class="architecture-step">
+                        <div class="step-number">5</div>
+                        <div>Capas Dense con activación ReLU y regularización L1/L2</div>
+                    </div>
+                    <div class="architecture-step">
+                        <div class="step-number">6</div>
+                        <div>Capa final Softmax para clasificación multiclase</div>
+                    </div>
+                </div>
+                
+                <div class="highlight">
+                    <strong>Configuración:</strong><br>
+                    Imagen: 224x224 píxeles<br>
+                    Batch Size: 32<br>
+                    Épocas: 50
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title">Resultados Obtenidos</h2>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <div>Accuracy</div>
+                        <div class="result-value">97.62%</div>
+                        <div>Meta: >90%</div>
+                    </div>
+                    <div class="result-item">
+                        <div>Precisión</div>
+                        <div class="result-value">97.50%</div>
+                    </div>
+                    <div class="result-item">
+                        <div>Recall</div>
+                        <div class="result-value">92.86%</div>
+                    </div>
+                    <div class="result-item">
+                        <div>AUC</div>
+                        <div class="result-value">99.85%</div>
+                    </div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-name">Top-2 Accuracy</div>
+                    <div class="metric-value">100.00%</div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-name">Train Accuracy</div>
+                    <div class="metric-value">98.83%</div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-name">Val Accuracy</div>
+                    <div class="metric-value">97.62%</div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-name">Diferencia</div>
+                    <div class="metric-value">1.21%</div>
+                </div>
+                
+                <div class="highlight">
+                    <strong>Análisis:</strong> Buen balance entre entrenamiento y validación, sin sobreajuste significativo.
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title">Tecnologías Utilizadas</h2>
+                <ul class="tech-list">
+                    <li>TensorFlow / Keras</li>
+                    <li>EfficientNetB0 (transfer learning)</li>
+                    <li>OpenCV para procesamiento de imágenes</li>
+                    <li>CLAHE para mejora de contraste</li>
+                    <li>Data augmentation avanzado</li>
+                    <li>TensorFlow Lite para despliegue móvil</li>
+                    <li>Google Colab para entrenamiento</li>
+                    <li>Haar Cascades para detección facial</li>
+                </ul>
+                
+                <div class="highlight">
+                    <strong>Dataset:</strong> Organizado por persona, con 10-15 imágenes por individuo, variando ángulos, iluminación y expresiones.
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title">Pruebas y Validación</h2>
+                <div class="metric">
+                    <div class="metric-name">Persona: Alexis</div>
+                    <div class="metric-value">99.83%</div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-name">Persona: Sergio</div>
+                    <div class="metric-value">100.00%</div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-name">Persona: Angela</div>
+                    <div class="metric-value">98.20%</div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-name">Persona: Ronaldo</div>
+                    <div class="metric-value">99.97%</div>
+                </div>
+                
+                <div class="highlight">
+                    <strong>Conclusión:</strong> El sistema identifica correctamente a cada integrante con confianzas superiores al 98%, incluso en condiciones variadas.
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title">Trabajo Futuro</h2>
+                <ul class="tech-list">
+                    <li>Ampliación del dataset (50-100 imágenes por persona)</li>
+                    <li>Reconocimiento en condiciones adversas (mascarillas, baja iluminación)</li>
+                    <li>Sistema de alerta en tiempo real para control de acceso</li>
+                    <li>Modelo liviano para dispositivos edge (cuantización)</li>
+                    <li>Reconocimiento de emociones o atributos demográficos</li>
+                    <li>Implementación con arquitecturas más recientes (ViT, EfficientNetV2)</li>
+                </ul>
+                
+                <div class="highlight">
+                    <strong>Repositorio:</strong> 
+                    <a href="https://github.com/kAngela-1573/IA--reconocimiento-facial" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Proyecto desarrollado por el Grupo Code4: Ronaldo Casilla, Sergio Llanos, Edison Merma, Angela Quinta</p>
+            <p>Asignatura: Construcción de Software - Docente: Hugo Espetia Huamanga</p>
+            <p>Universidad Peruana - Año de la recuperación y consolidación de la economía peruana</p>
+        </footer>
+    </div>
+</body>
+</html>
